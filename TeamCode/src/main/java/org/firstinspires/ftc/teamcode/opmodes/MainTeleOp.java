@@ -33,11 +33,11 @@ public class MainTeleOp extends OpMode {
     private static final double BLUE_HIVE_X = 84.0, BLUE_HIVE_Y = 71.5;
 
     // Calibration table: distance (inches) -> flywheel power
-    private static final double[] DIST_IN = {36, 60, 84, 108};
-    private static final double[] POWER   = {0.65, 0.75, 0.85, 0.95};
+    private static final double[] DIST_IN = {24, 42, 50, 55};
+    private static final double[] POWER   = {0.44, 0.54, 0.64, 0.74};
 
     // Hold-to-aim tuning
-    private static final double AIM_KP = 0.012;          // turn power per degree of tx
+    private static final double AIM_KP = 0.020;          // turn power per degree of tx
     private static final double AIM_LOCK_DEG = 1.5;      // must be inside this to lock
     private static final double AIM_RELEASE_DEG = 4.0;   // stays locked until outside this
     private static final double AIM_FILTER = 0.3;        // 0..1, lower = smoother

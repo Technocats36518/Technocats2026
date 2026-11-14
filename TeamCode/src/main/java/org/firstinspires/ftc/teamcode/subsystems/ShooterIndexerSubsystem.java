@@ -45,8 +45,8 @@ public class ShooterIndexerSubsystem {
     }
 
     // Distance (inches) to hive -> flywheel power. Placeholder values until calibrated on the field.
-    private static final double[] DIST_IN = {36, 60, 84, 108};
-    private static final double[] POWER   = {0.65, 0.75, 0.85, 0.95};
+    private static final double[] DIST_IN = {24, 42, 50, 55};
+    private static final double[] POWER   = {0.44, 0.54, 0.64, 0.74};
 
     public static double powerForDistance(double d) {
         if (d <= DIST_IN[0]) return POWER[0];
@@ -86,7 +86,7 @@ public class ShooterIndexerSubsystem {
     public Command fireShot() {
         return sequential(
                 spinUp(),
-                waitMs(800),       // Allow time for the flywheel to reach target velocity
+                waitMs(1000),       // Allow time for the flywheel to reach target velocity
                 feedPollen(),
                 waitMs(500),       // Time duration required to push item completely through
                 stopIndexer()
@@ -97,7 +97,7 @@ public class ShooterIndexerSubsystem {
     public Command shootMacro() {
         return sequential(
                 spinUp(),
-                waitMs(800),       // Allow time for the flywheel to reach target velocity
+                waitMs(1000),       // Allow time for the flywheel to reach target velocity
                 feedPollen(),
                 waitMs(500),       // Time duration required to push item completely through
                 stopIndexer()
